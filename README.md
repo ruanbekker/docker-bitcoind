@@ -109,14 +109,20 @@ curl -u "bitcoinrpc:bitcoinpass" -d '{"jsonrpc": "1.0", "id": "docker-bitcoind",
 More info:
 - https://medium.com/coinmonks/ultimate-guide-to-bitcoin-testnet-fullnode-setup-b83da1bb22e
 
+## Access Grafana
+
+Access grafana on http://localhost:3000
+
+
+## Resources
+
+Documentation:
+
+- https://developer.bitcoin.org/reference/rpc/
+
 Testnet Faucet:
 - https://bitcoinfaucet.uo1.net/
 
 Testnet Blockexplorers:
 - https://blockstream.info/testnet/tx/0039094bef10be889162e75dd8dcfb986ad74f556a1c36b3dd2970bd94484ccf
-
-## Access Grafana
-
-Access grafana on http://localhost:3000
-
 
