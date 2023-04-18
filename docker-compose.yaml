@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  bitcoind:
+    build: .
+    container_name: bitcoind
+    restart: unless-stopped
+    labels:
+      logging: "promtail"
+      logging_jobname: "containerlogs"
+    ports:
+      - 18332:18332
+    networks:
+      - blockchain
+    volumes:
+      - ./blockchain:/blockchain
+
+  bitcoind-exporter:
+    image: jvstein/bitcoin-prometheus-exporter:v0.7.0
+    container_name: bitcoind-exporter
+    restart: unless-stopped
+    environment:
+      - BITCOIN_RPC_HOST=bitcoind
+      - BITCOIN_RPC_PORT=18332
+      - BITCOIN_RPC_USER=bitcoinrpc
+      - BITCOIN_RPC_PASSWORD=bitcoinpass
+      - REFRESH_SECONDS=1
+      - LOG_LEVEL=INFO
+    ports:
+      - 9332:9332
+    depends_on:
+      - bitcoind
+    networks:
+      - blockchain
+      - monitoring
+
+networks:
+  blockchain:
+    name: blockchain
+  monitoring:
+    external: true
