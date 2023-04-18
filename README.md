@@ -143,6 +143,17 @@ curl -u "bitcoinrpc:bitcoinpass" -d '{"jsonrpc": "1.0", "id": "docker-bitcoind",
 ...
 ```
 
+To see how many blocks still have to sync:
+
+```bash
+headers=$(curl -s -u "bitcoinrpc:bitcoinpass" -d '{"jsonrpc": "1.0", "id": "docker-bitcoind", "method": "getblockchaininfo", "params": []}' -H 'content-type: text/plain;' http://127.0.0.1:18332/ | jq -r '.result.headers')
+blocks=$(curl -s -u "bitcoinrpc:bitcoinpass" -d '{"jsonrpc": "1.0", "id": "docker-bitcoind", "method": "getblockchaininfo", "params": []}' -H 'content-type: text/plain;' http://127.0.0.1:18332/ | jq -r '.result.blocks')
+
+echo "blocks=$blocks / headers=$headers"
+echo "blocks to sync:"
+echo "$headers - $blocks" | bc
+```
+
 More info:
 - https://medium.com/coinmonks/ultimate-guide-to-bitcoin-testnet-fullnode-setup-b83da1bb22e
 
