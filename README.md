@@ -1,6 +1,16 @@
 # docker-bitcoind
 Bitcoin Core running on Docker with Prometheus and Grafana
 
+## TOC
+
+- [Motivation](#motivation)
+- [Notes](#notes)
+- [Pre Requisites](#pre-requisites)
+- [Boot Monitoring Stack](#boot-monitoring-stack)
+- [Boot Bitcoin Stack](#boot-bitcoin-stack)
+- [Monitoring Screenshots](#monitoring-screenshots)
+- [Bitcoin RPC](#access-bitcoin-rpc)
+
 ## Motivation
 
 The idea of this project is to spin up a bitcoin core node on a docker container, with container metrics as well as prometheus metrics and visualised with Grafana.
@@ -9,9 +19,9 @@ The idea of this project is to spin up a bitcoin core node on a docker container
 
 This is a bitcoin testnet and has been setup with weak authentication and allows public access should the node be in a public subnet.
 
-## Pre-Requisites
+## Boot Monitoring Stack
 
-Boot the monitoring stack:
+The bitcoin stack has a dependency on the monitoring network, so you would need to boot the monitoring stack:
 
 ```bash
 cd observability
@@ -24,7 +34,7 @@ Change back to the root project:
 cd ../
 ```
 
-## Boot Bitcoin
+## Boot Bitcoin Stack
 
 Build the project:
 
