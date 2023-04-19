@@ -10,6 +10,8 @@ Bitcoin Core running on Docker with Prometheus and Grafana
 - [Boot Bitcoin Stack](#boot-bitcoin-stack)
 - [Monitoring Screenshots](#monitoring-screenshots)
 - [Bitcoin RPC](#access-bitcoin-rpc)
+- [Access Grafana](#access-grafana)
+- [Resources](#resources)
 
 ## Motivation
 
