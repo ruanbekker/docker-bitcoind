@@ -38,6 +38,23 @@ Start the project:
 docker-compose up -d
 ```
 
+## Monitoring Screenshots
+
+Bitcoin Exporter Dashboard:
+
+![image](https://user-images.githubusercontent.com/567298/233106983-ef66ea75-3cbc-43e3-a4b6-de0963ba4851.png)
+
+Bitcoin Container Dashboard:
+
+![image](https://user-images.githubusercontent.com/567298/233107267-02049a12-c995-4077-8f95-78aec7784536.png)
+
+![image](https://user-images.githubusercontent.com/567298/233107710-c925712e-3644-4a15-9318-b4134546a29b.png)
+
+Bitcoin Container Logs:
+
+![image](https://user-images.githubusercontent.com/567298/233108153-f54b2a86-b5dd-4018-9373-e20911955d00.png)
+
+
 ## Access Bitcoin RPC
 
 - `getblockchaininfo`
