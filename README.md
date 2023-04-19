@@ -87,6 +87,12 @@ curl -u "bitcoinrpc:bitcoinpass" -d '{"jsonrpc": "1.0", "id": "docker-bitcoind",
 curl -u "bitcoinrpc:bitcoinpass" -d '{"jsonrpc": "1.0", "id": "docker-bitcoind", "method": "createwallet", "params": ["test-wallet"]}' -H 'content-type: text/plain;' http://127.0.0.1:18332/
 ```
 
+- `loadwallet`
+
+```bash
+curl -u "bitcoinrpc:bitcoinpass" -d '{"jsonrpc": "1.0", "id": "docker-bitcoind", "method": "loadwallet", "params": ["test-wallet"]}' -H 'content-type: text/plain;' http://127.0.0.1:18332/
+```
+
 - `getwalletinfo`
 
 ```bash
